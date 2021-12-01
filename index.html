@@ -31,9 +31,18 @@
      }
      fetch('list').then(function(response){
        response.text().then(function(text){
-         //<li><a href="#!html" onclick="fetchPage('html')">HTML</a></li>
          console.log(text);
          var items = text.split(',')
+         var i = 0;
+         var tags = '';
+         while (i<items, length) {
+           var item = items[i];
+           //<li><a href="#!html" onclick="fetchPage('html')">HTML</a></li>
+          var tag = '<li>'+item+'</li>';
+           console.log(tag);
+           tags = tags + tag;
+           i = i + 1;
+         }
          console.log(items);
          document.querySelector('#nav').innerHTML = text;
        })
@@ -41,3 +50,4 @@
     </script>
 </body>
 </html>
+
